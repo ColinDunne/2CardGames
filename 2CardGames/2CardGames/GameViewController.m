@@ -58,7 +58,7 @@
 
 - (PlayingCardMatchingGame *)game {
     if (!_game) {
-        _game = [[PlayingCardMatchingGame alloc] initWithCardCount:[self.cardButtons count] andGameMode:self.gameMode usingDeck:[self createDeck]];
+        _game = [[PlayingCardMatchingGame alloc] initWithCardCount:[self.cardButtons count] usingDeck:[self createDeck]];
     }
     return _game;
 }
