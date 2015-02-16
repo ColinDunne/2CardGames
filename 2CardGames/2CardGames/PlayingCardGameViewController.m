@@ -1,17 +1,16 @@
 //
-//  GameViewController.m
+//  PlayingCardGameViewController.m
 //  2CardGames
 //
-//  Created by 钱辰 on 15/2/10.
+//  Created by 钱辰 on 15/2/12.
 //  Copyright (c) 2015年 qianchen. All rights reserved.
 //
 
-#import "GameViewController.h"
+#import "PlayingCardGameViewController.h"
 #import "PlayingCardDeck.h"
 #import "PlayingCardMatchingGame.h"
 
-@interface GameViewController ()
-@property (nonatomic,strong) Deck *deck;
+@interface PlayingCardGameViewController ()
 @property (nonatomic,strong) PlayingCardMatchingGame *game;
 @property (nonatomic) NSInteger gameMode;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
@@ -19,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *msgLabel;
 @end
 
-@implementation GameViewController
+@implementation PlayingCardGameViewController
 
 - (IBAction)touchCardButton:(UIButton *)sender {
     NSUInteger cardIndex = [self.cardButtons indexOfObject:sender];

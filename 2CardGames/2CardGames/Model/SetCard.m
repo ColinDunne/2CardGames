@@ -13,11 +13,17 @@
 - (int)match:(NSArray *)otherCards {
     int score = 0;
     
-    for (SetCard *otherCard in otherCards) {
-        if ([self.shape isEqualToString:otherCard.shape] && [self.color isEqualToString:otherCard.color]) {
-            score += 2;
-        } else if ([self.shape isEqualToString:otherCard.shape] || [self.color isEqualToString:otherCard.color]) {
-            score += 1;
+    for (int i = 0; i < [otherCards count]; i++) {
+        for (int j = i + 1; j < [otherCards count]; j++) {
+            SetCard *cardOne = [otherCards objectAtIndex:i];
+            SetCard *cardTwo = [otherCards objectAtIndex:j];
+            if ([cardOne.shape isEqualToString:cardTwo.shape] && [cardOne.color isEqualToString:cardTwo.color]) {
+                score += 4;
+            } else if (![cardOne.shape isEqualToString:cardTwo.shape] && ![cardOne.color isEqualToString:cardTwo.color]) {
+                score += 0;
+            } else {
+                score += 1;
+            }
         }
     }
     
@@ -45,7 +51,7 @@
 }
 
 + (NSArray *)validColors {
-    return  @[@"Red",@"Yellow",@"Blue",@"Orange",@"Purple",@"Grean",@"Grey",@"Black"];
+    return  @[@"Red",@"Yellow",@"Blue",@"Orange",@"Purple",@"Green",@"Gray",@"Black"];
 }
 
 @end

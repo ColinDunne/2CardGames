@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SetCard.h"
-#import "SetCardDeck.h"
+#import "Deck.h"
 
 @interface SetCardMatchingGame : NSObject
 
@@ -17,7 +17,7 @@
 @property (nonatomic,strong,readonly) NSString *latestMessage;
 
 
-- (instancetype)initWithCardCount:(NSUInteger)count usingDeck:(SetCardDeck *)deck;
+- (instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck;
 
 - (void)chooseCardAtIndex:(NSUInteger)index;
 

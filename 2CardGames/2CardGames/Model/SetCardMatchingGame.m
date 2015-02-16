@@ -26,7 +26,7 @@ static const int COST_TO_CHOOSE = 1;
     return nil;
 }
 
-- (instancetype)initWithCardCount:(NSUInteger)count usingDeck:(SetCardDeck *)deck {
+- (instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck {
     self = [super init];
     
     if (self) {
@@ -56,18 +56,22 @@ static const int COST_TO_CHOOSE = 1;
             
             // match against other two cards
             NSMutableArray *cardsToMatch = [[NSMutableArray alloc] initWithCapacity:2];
-            [self.cards removeObjectAtIndex:index];
+            // [self.cards removeObjectAtIndex:index];
             for (SetCard *otherCard in self.cards) {
+                if (otherCard == card) {
+                    [cardsToMatch addObject:otherCard];
+                }
+                
                 if (otherCard.isChosen && !otherCard.isMatched) {
                     [cardsToMatch addObject:otherCard];
                 }
             }
             
-            if ([cardsToMatch count] == 2) {
+            if ([cardsToMatch count] == 3) {
                 int matchScore = [card match:cardsToMatch];
                 
                 // shapes and colors are a perfect match  or  don't match at all
-                if (matchScore == 4 || matchScore == 0) {
+                if (matchScore == 12 || matchScore == 0) {
                     self.score += MATCH_BONUS;
                     card.matched = YES;
                     ((SetCard *)cardsToMatch[0]).matched = YES;
