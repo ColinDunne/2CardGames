@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D02754141A983FC50040045F /* MatchingLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D02754131A983FC50040045F /* MatchingLogViewController.m */; };
 		D0B421ED1A88E66200D43B09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B421EC1A88E66200D43B09 /* main.m */; };
 		D0B421F01A88E66200D43B09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B421EF1A88E66200D43B09 /* AppDelegate.m */; };
 		D0B421F61A88E66200D43B09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B421F41A88E66200D43B09 /* Main.storyboard */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D02754121A983FC50040045F /* MatchingLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchingLogViewController.h; sourceTree = "<group>"; };
+		D02754131A983FC50040045F /* MatchingLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchingLogViewController.m; sourceTree = "<group>"; };
 		D0B421E71A88E66200D43B09 /* 2CardGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2CardGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B421EB1A88E66200D43B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0B421EC1A88E66200D43B09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -114,6 +117,8 @@
 				D0FF8C721A8C7BAC00D6AE8C /* PlayingCardGameViewController.m */,
 				D0FF8C741A8C7BE400D6AE8C /* SetCardGameViewController.h */,
 				D0FF8C751A8C7BE400D6AE8C /* SetCardGameViewController.m */,
+				D02754121A983FC50040045F /* MatchingLogViewController.h */,
+				D02754131A983FC50040045F /* MatchingLogViewController.m */,
 				D0B421EA1A88E66200D43B09 /* Supporting Files */,
 			);
 			path = 2CardGames;
@@ -276,6 +281,7 @@
 				D0FF8C581A88E93E00D6AE8C /* Deck.m in Sources */,
 				D0FF8C761A8C7BE400D6AE8C /* SetCardGameViewController.m in Sources */,
 				D0FF8C6A1A89FD3C00D6AE8C /* PlayingCardMatchingGame.m in Sources */,
+				D02754141A983FC50040045F /* MatchingLogViewController.m in Sources */,
 				D0FF8C5E1A88EC2300D6AE8C /* PlayingCardDeck.m in Sources */,
 				D0B421F01A88E66200D43B09 /* AppDelegate.m in Sources */,
 				D0FF8C731A8C7BAC00D6AE8C /* PlayingCardGameViewController.m in Sources */,

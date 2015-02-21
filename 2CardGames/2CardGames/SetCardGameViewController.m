@@ -21,12 +21,6 @@
 
 @implementation SetCardGameViewController
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [self startOver];
-}
-
 - (IBAction)touchCardButton:(UIButton *)sender {
     NSUInteger cardIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:cardIndex];
@@ -94,6 +88,11 @@
 
 - (Deck *)createDeck {
     return [[SetCardDeck alloc] init];
+}
+
+#pragma mark Segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
 }
 
 @end

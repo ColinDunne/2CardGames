@@ -14,14 +14,10 @@
 
 @property (nonatomic,readonly) NSInteger score;
 
-@property (nonatomic,readonly) NSInteger mode;
-
 @property (nonatomic,strong,readonly) NSString *latestMessage;
 
 
 - (instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck;
-
-- (instancetype)initWithCardCount:(NSUInteger)count andGameMode:(NSInteger)mode usingDeck:(Deck *)deck;
 
 - (void)chooseCardAtIndex:(NSUInteger)index;
 

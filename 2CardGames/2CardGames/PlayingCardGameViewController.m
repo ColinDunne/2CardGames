@@ -12,7 +12,6 @@
 
 @interface PlayingCardGameViewController ()
 @property (nonatomic,strong) PlayingCardMatchingGame *game;
-@property (nonatomic) NSInteger gameMode;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *msgLabel;
@@ -64,6 +63,11 @@
 
 - (Deck *)createDeck {
     return [[PlayingCardDeck alloc] init];
+}
+
+#pragma mark Segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
 }
 
 @end
