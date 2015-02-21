@@ -22,6 +22,12 @@
 
 @implementation SetCardGameViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self startOver];
+}
+
 - (IBAction)touchCardButton:(UIButton *)sender {
     NSUInteger cardIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:cardIndex];
