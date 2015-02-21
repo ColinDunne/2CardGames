@@ -9,19 +9,19 @@
 #import "MatchingLogViewController.h"
 
 @interface MatchingLogViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextView *logView;
 @end
 
 @implementation MatchingLogViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self updateUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)updateUI {
+    self.logView.text = self.matchingLog;
 }
 
 /*

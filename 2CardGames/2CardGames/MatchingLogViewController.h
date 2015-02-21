@@ -10,4 +10,6 @@
 
 @interface MatchingLogViewController : UIViewController
 
+@property (nonatomic,strong) NSMutableString *matchingLog;
+
 @end

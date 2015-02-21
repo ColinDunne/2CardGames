@@ -13,6 +13,7 @@
 @property (nonatomic,readwrite) NSInteger score;
 @property (nonatomic,strong) NSMutableArray *cards;
 @property (nonatomic,strong,readwrite) NSString *latestMessage;
+@property (nonatomic,strong,readwrite) NSMutableString *matchingLog;
 
 @end
 
@@ -79,6 +80,8 @@ static const int COST_TO_CHOOSE = 1;
                     
                     self.latestMessage = [NSString stringWithFormat:@"Matched %@ %@ %@ for %d points", card.contents,
                                           ((SetCard *)cardsToMatch[0]).contents, ((SetCard *)cardsToMatch[1]).contents, MATCH_BONUS];
+                    [self.matchingLog appendString:self.latestMessage];
+                    [self.matchingLog appendString:@"\n"];
                 } else {
                     self.score -= MISMATCH_PENALTY;
                     ((SetCard *)cardsToMatch[0]).chosen = NO;
@@ -86,6 +89,8 @@ static const int COST_TO_CHOOSE = 1;
                     
                     self.latestMessage = [NSString stringWithFormat:@"%@ %@ %@ don't match! %d points penalty!", card.contents,
                                           ((SetCard *)cardsToMatch[0]).contents, ((SetCard *)cardsToMatch[1]).contents, MISMATCH_PENALTY];
+                    [self.matchingLog appendString:self.latestMessage];
+                    [self.matchingLog appendString:@"\n"];
                 }
                 
             } else {
@@ -110,6 +115,13 @@ static const int COST_TO_CHOOSE = 1;
         _cards = [[NSMutableArray alloc] init];
     }
     return _cards;
+}
+
+- (NSMutableString *)matchingLog {
+    if (!_matchingLog) {
+        _matchingLog = [[NSMutableString alloc] init];
+    }
+    return _matchingLog;
 }
 
 @end

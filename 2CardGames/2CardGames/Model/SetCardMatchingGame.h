@@ -13,8 +13,8 @@
 @interface SetCardMatchingGame : NSObject
 
 @property (nonatomic,readonly) NSInteger score;
-
 @property (nonatomic,strong,readonly) NSString *latestMessage;
+@property (nonatomic,strong,readonly) NSMutableString *matchingLog;
 
 
 - (instancetype)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck;

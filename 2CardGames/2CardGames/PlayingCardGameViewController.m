@@ -9,6 +9,7 @@
 #import "PlayingCardGameViewController.h"
 #import "PlayingCardDeck.h"
 #import "PlayingCardMatchingGame.h"
+#import "MatchingLogViewController.h"
 
 @interface PlayingCardGameViewController ()
 @property (nonatomic,strong) PlayingCardMatchingGame *game;
@@ -67,7 +68,12 @@
 
 #pragma mark Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
+    if ([segue.identifier isEqualToString:@"Matching Log"]) {
+        if ([segue.destinationViewController isKindOfClass:[MatchingLogViewController class]]) {
+            MatchingLogViewController *mlvc = (MatchingLogViewController *)segue.destinationViewController;
+            mlvc.matchingLog = self.game.matchingLog;
+        }
+    }
 }
 
 @end

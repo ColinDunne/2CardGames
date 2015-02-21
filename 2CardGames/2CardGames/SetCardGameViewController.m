@@ -10,6 +10,7 @@
 #import "SetCard.h"
 #import "SetCardDeck.h"
 #import "SetCardMatchingGame.h"
+#import "MatchingLogViewController.h"
 
 @interface SetCardGameViewController ()
 
@@ -92,7 +93,12 @@
 
 #pragma mark Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+    if ([segue.identifier isEqualToString:@"Matching Log"]) {
+        if ([segue.destinationViewController isKindOfClass:[MatchingLogViewController class]]) {
+            MatchingLogViewController *mlvc = (MatchingLogViewController *)segue.destinationViewController;
+            mlvc.matchingLog = self.game.matchingLog;
+        }
+    }
 }
 
 @end
